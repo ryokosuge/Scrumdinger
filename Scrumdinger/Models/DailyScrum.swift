@@ -9,10 +9,10 @@ import SwiftUI
 
 struct DailyScrum: Identifiable {
     let id: UUID
-    let title: String
-    let attendees: [String]
-    let lengthInMinutes: Int
-    let color: Color
+    var title: String
+    var attendees: [String]
+    var lengthInMinutes: Int
+    var color: Color
 
     init(id: UUID = UUID(), title: String, attendees: [String], lengthInMinutes: Int, color: Color) {
         self.id = id
@@ -43,5 +43,12 @@ extension DailyScrum {
 
     var data: Data {
         return Data(title: title, attendees: attendees, lengthInMinutes: Double(lengthInMinutes), color: color)
+    }
+
+    mutating func update(from data: Data) {
+        title = data.title
+        attendees = data.attendees
+        lengthInMinutes = Int(data.lengthInMinutes)
+        color = data.color
     }
 }
