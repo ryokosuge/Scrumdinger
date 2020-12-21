@@ -22,6 +22,7 @@
 		758AA754258C849E00CF27AD /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758AA753258C849E00CF27AD /* MeetingView.swift */; };
 		758AA756258C849F00CF27AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758AA755258C849F00CF27AD /* Assets.xcassets */; };
 		758AA759258C849F00CF27AD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 758AA758258C849F00CF27AD /* Preview Assets.xcassets */; };
+		75F159212590A74A00DE0084 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75F159202590A74A00DE0084 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		758AA755258C849F00CF27AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		758AA758258C849F00CF27AD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		758AA75A258C849F00CF27AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		75F159202590A74A00DE0084 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +60,11 @@
 		7537E35B258C8CE900AB35D2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				7537E35C258C8D0800AB35D2 /* DailyScrum.swift */,
-				7537E363258C8FCB00AB35D2 /* Color+Codable.swift */,
-				7537E377258CAA7F00AB35D2 /* ScrumTimer.swift */,
 				7537E37D258CAE6F00AB35D2 /* AVPlayer+Ding.swift */,
+				7537E363258C8FCB00AB35D2 /* Color+Codable.swift */,
+				7537E35C258C8D0800AB35D2 /* DailyScrum.swift */,
+				75F159202590A74A00DE0084 /* History.swift */,
+				7537E377258CAA7F00AB35D2 /* ScrumTimer.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				758AA754258C849E00CF27AD /* MeetingView.swift in Sources */,
 				7537E367258C91D700AB35D2 /* ScrumsView.swift in Sources */,
+				75F159212590A74A00DE0084 /* History.swift in Sources */,
 				7537E36D258C9C4C00AB35D2 /* EditView.swift in Sources */,
 				7537E37E258CAE6F00AB35D2 /* AVPlayer+Ding.swift in Sources */,
 				7537E372258CA7A700AB35D2 /* MeetingHeaderView.swift in Sources */,
