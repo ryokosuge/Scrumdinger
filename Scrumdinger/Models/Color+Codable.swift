@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Color {
+extension Color: Codable {
     
     private struct Components {
         let red: Double
