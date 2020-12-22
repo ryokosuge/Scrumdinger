@@ -58,21 +58,21 @@ struct SpeechRecognizer {
 
             do {
                 relay(speech, message: "Booting audio subsystem")
-                
+
                 let audioSession = AVAudioSession.sharedInstance()
                 try audioSession.setCategory(.record, mode: .measurement, options: .duckOthers)
                 try audioSession.setActive(true, options: .notifyOthersOnDeactivation)
                 let inputNode = audioEngine.inputNode
                 relay(speech, message: "Found input node")
-                
+
                 let recordingFormat = inputNode.outputFormat(forBus: 0)
-                inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+                inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
                     recognitionRequest.append(buffer)
                 }
                 relay(speech, message: "Preparing audio engine")
                 audioEngine.prepare()
                 try audioEngine.start()
-                
+
                 assistant.recognitionTask = assistant.speechRecognizer?.recognitionTask(with: recognitionRequest) { (result, error) in
                     var isFinal = false
                     if let result = result {

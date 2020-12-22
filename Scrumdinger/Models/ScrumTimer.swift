@@ -34,7 +34,7 @@ class ScrumTimer: ObservableObject {
     private var speakerText: String {
         "Speaker \(speakerIndex + 1): \(speakers[speakerIndex].name)"
     }
-    
+
     private var startDate: Date?
 
     init(lengthInMinutes: Int = 0, attendees: [String] = []) {
@@ -68,7 +68,7 @@ class ScrumTimer: ObservableObject {
         secondsElapsed = index * secondsPerSpeaker
         secondsRemaining = lengthInSeconds - secondsElapsed
         startDate = Date()
-        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] timer in
+        timer = Timer.scheduledTimer(withTimeInterval: frequency, repeats: true) { [weak self] _ in
             if let self = self, let startDate = self.startDate {
                 let secondsElapsed = Date().timeIntervalSince1970 - startDate.timeIntervalSince1970
                 self.update(secondsElapsed: Int(secondsElapsed))
@@ -91,7 +91,7 @@ class ScrumTimer: ObservableObject {
             speakerChangedAction?()
         }
     }
-    
+
     func reset(lengthInMinutes: Int, attendees: [String]) {
         self.lengthInMinutes = lengthInMinutes
         self.speakers = attendees.isEmpty ? [Speaker(name: "Player 1", isCompleted: false)] : attendees.map { Speaker(name: $0, isCompleted: false) }
